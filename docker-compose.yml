@@ -5,15 +5,8 @@ services:
     image: vishwacloudlab/catalog-service
     ports: 
      - "80:80"
-    restart: always
-    deploy:
-      resources:
-        limits:
-          cpus: '0.01'
-          memory: 50M
-        reservations:
-          cpus: '0.001'
-          memory: 20M
+  redis:
+    image: redis:alpine
   review-service:
     image: vishwacloudlab/review-service
     ports:
@@ -40,5 +33,4 @@ services:
         reservations:
           cpus: '0.001'
           memory: 20M
-  redis:
-    image: redis:alpine
+
