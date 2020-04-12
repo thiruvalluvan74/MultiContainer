@@ -11,4 +11,4 @@ def hello():
     return html.format(name=os.getenv("NAME", "APP3 - world"), hostname=socket.gethostname())
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=95)
+    app.run(host='0.0.0.0', port=9500)
