@@ -2,9 +2,10 @@
 services: 
   Review-Module:
     ports: 
-      - "95:9500"    
+      - "95:9500"
+    image: thiruvalluvan74/catalog-service
     deploy: 
-      resources: 
+    resources: 
         limits: 
           cpus: "0.01"
           memory: 50M
@@ -23,8 +24,7 @@ services:
           memory: 50M
         reservations: 
           cpus: "0.001"
-          memory: 20M
-    image: thiruvalluvan74/catalog-service
+          memory: 20M   
     restart: always
   order-service: 
     deploy: 
