@@ -3,7 +3,7 @@ version: '3'
 services:
  catalog-module:
     image: thiruvalluvan74/catalog-service
-    ports: 
+    ports:
     	- "80:8000"
     restart: always
     deploy:
