@@ -1,5 +1,4 @@
-version: '3'
-
+---
 services:
  catalog-module:
     image: thiruvalluvan74/catalog-service
