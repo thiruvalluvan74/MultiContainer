@@ -1,16 +1,10 @@
 version: '3'
 
 services:
-  catalog-service:
+ catalog-module:
     image: thiruvalluvan74/catalog-service
     ports: 
-     - "80:8000"
-  redis:
-    image: redis:alpine
-  review-service:
-    image: thiruvalluvan74/review-structure
-    ports:
-    - "90:9000"
+    	- "80:8000"
     restart: always
     deploy:
       resources:
@@ -20,10 +14,23 @@ services:
         reservations:
           cpus: '0.001'
           memory: 20M
-  order-service:
+ Review-Module:
+    image: thiruvalluvan74/review-structure
+    ports:
+    	- "90:9000"
+    restart: always
+    deploy:
+      resources:
+        limits:
+          cpus: '0.01'
+          memory: 50M
+        reservations:
+          cpus: '0.001'
+          memory: 20M
+ order-service:
     image: thiruvalluvan74/order-service
     ports:
-    - "95:9500"
+    	- "95:9500"
     restart: always
     deploy:
       resources:
